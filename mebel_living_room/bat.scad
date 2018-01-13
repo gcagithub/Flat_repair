@@ -2,27 +2,26 @@
 
 use <./serial_hull.scad>
 
-multi = 1000;
+multi = 1000; //milimeters
 
 delta = 0.1;
 
 bat_height = 0.4 * multi;
-bat_length = 1.5 * multi;
+bat_length = 1.2 * multi;
 bat_th = 0.1 * multi;
 
-space_wall_bat = 0.6 * multi;
-space_wall_pipe = 0.1 * multi;
-space_floor_bat = 0.3 * multi;
+space_wall_bat = 0.96 * multi;
+space_wall_pipe = 0.32 * multi;
+space_floor_bat = 0.2 * multi;
 space_pipes = 0.1 * multi;
 
-
-pipe_length = 0.5 * multi;
+pipe_length = space_wall_bat-space_wall_pipe;
 pipe_height = space_floor_bat + 0.3 * multi;
 pipe_height_low = space_floor_bat + 0.1 * multi;
 pipe_d = 0.02 * multi;
 pipe_2d = 2*pipe_d;
 
-
+function batThickness() = bat_th;
 
 module battery() {
     translate([space_wall_bat,bat_th/2,space_floor_bat])
@@ -71,7 +70,7 @@ module pipe_low() {
 module create_bat() {
    union() {
         battery();
-        translate([space_pipes,0,0]) {
+        translate([space_wall_pipe,0,0]) {
             pipe_top();
             pipe_low();
         }

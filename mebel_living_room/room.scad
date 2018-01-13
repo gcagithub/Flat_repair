@@ -15,12 +15,12 @@ wall_th = 0.2 * multi;
 coord_floor = [room_length, room_width, wall_th];
 coord_north_wall = [room_height, room_width, wall_th];
 
-space_door_wall = 0.6 * multi;
-space_balk_door_step = 0.2 * multi;
-space_floor_window = 1 * multi;
-space_window_balk_door = 0.1 * multi;
-space_floor_door = 0.05 * multi;
-space_wall_bat = 0.1 * multi;
+space_door_wall = 0.7 * multi;
+space_balk_door_step = 0.21 * multi;
+space_floor_window = 0.75 * multi;
+space_window_balk_door = 0.05 * multi;
+space_floor_door = 0 * multi;
+space_wall_bat = 0.04 * multi + batThickness()/2;
 
 trans_floor = [0, -room_width, -wall_th];
 trans_north_wall = [0, -room_width, 0];
@@ -29,13 +29,13 @@ trans_west_wall = [0, -room_width-wall_th, 0];
 trans_east_wall = [0, 0, 0];
 trans_door = [space_door_wall, -delta, space_floor_door];
 
-width_door = 0.8 * multi;
-width_balk_door = 0.6 * multi;
+width_door = 0.9 * multi;
+width_balk_door = 0.7 * multi;
 width_window = 2 * multi;
 
-height_door = 2 * multi;
-height_balk_door = 2.3 * multi;
-height_window = 1.5 * multi;
+height_door = 2.06 * multi;
+height_balk_door = 1.96 * multi;
+height_window = 1.43 * multi;
 
 function getRoomLength() = room_length;
 function getRoomWidth() = room_width;

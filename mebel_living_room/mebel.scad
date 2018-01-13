@@ -35,13 +35,11 @@ panel_h_md_length = panel_h_sm_width;
 panel_h_width = meb_width;
 panel_h_length = 270*multi;
 
-panel_v_upper_height = getRoomHeight()-panel_v_height-delta;
+panel_v_upper_height = getRoomHeight()-panel_v_height-panel_th;
 panel_v_upper_width = meb_width;
 
 echo("Середина = ", meb_length-2*door_vert_width_dbl-2*delta);
 
-cnt = 0;
-function counter(i=1) = cnt + 1;
 
 module echo_dimensions(type, width, height){
     echo(type, "ширина|высота (мм)", width, height);
